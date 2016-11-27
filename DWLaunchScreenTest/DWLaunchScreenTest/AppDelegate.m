@@ -10,7 +10,7 @@
 #import "ViewController.h"
 #import "DWLaunchScreen.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<DWLaunchScreenDelegate>
 
 @end
 
@@ -23,17 +23,62 @@
     
     self.window.rootViewController = [[ViewController alloc] init];
     
+    self.window.backgroundColor = [UIColor whiteColor];
+    
     [self.window makeKeyAndVisible];
     
     [NSThread sleepForTimeInterval:1.25f];
     
     DWLaunchScreen *launch = [[DWLaunchScreen alloc] init];
     
-    [launch dw_LaunchScreenImage:[UIImage imageNamed:@"bg.jpg"] withWindow:self.window];
+    launch.delegate = self;
+    
+    launch.accordingLength = 5;
+    
+//    launch.bgColor = [UIColor whiteColor];
+    
+//    launch.deleteLength = 3.0f;
+    
+//    launch.skipHide = YES;
+    
+    launch.skipString = @"等待:";
+    
+    launch.skipTitleColor = [UIColor blackColor];
+    
+    launch.skipBgColor = [UIColor orangeColor];
+    
+//    launch.skipLocation = top;
+    
+//    launch.skipFont = 18;
+    
+    launch.logoImage = [UIImage imageNamed:@"bg.jpg"];
+    
+//    [launch dw_LaunchScreenContent:@"https://www.baidu.com" window:self.window withError:^(NSError *error) {
+//        
+//         NSLog(@"error:%@", error);
+//        
+//    }];
+    
+//    [launch dw_LaunchScreenContent:[UIImage imageNamed:@"bg.jpg"] window:self.window withError:^(NSError *error) {
+//        
+//        NSLog(@"error:%@", error);
+//        
+//    }];
+
+    [launch dw_LaunchScreenContent:[NSURL URLWithString:@"https://www.baidu.com"] window:self.window withError:^(NSError *error) {
+        
+        NSLog(@"error:%@", error);
+        
+    }];
     
     return YES;
 }
 
+- (void)dw_didSelectImageView {
+    
+    NSLog(@"点击了图片");
+    
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

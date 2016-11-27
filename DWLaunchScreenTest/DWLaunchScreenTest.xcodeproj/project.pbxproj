@@ -15,6 +15,7 @@
 		35B5D2851DD9BFE200A72906 /* DWLaunchScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B5D2841DD9BFE200A72906 /* DWLaunchScreen.m */; };
 		35B5D2871DD9C9DF00A72906 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D2861DD9C9DF00A72906 /* bg.jpg */; };
 		35B5D2891DD9CB1B00A72906 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D2881DD9CB1B00A72906 /* Launch Screen.storyboard */; };
+		35FDCFDF1DEAD67B00AA8FBC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FDCFDE1DEAD67B00AA8FBC /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		35B5D2841DD9BFE200A72906 /* DWLaunchScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWLaunchScreen.m; sourceTree = "<group>"; };
 		35B5D2861DD9C9DF00A72906 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		35B5D2881DD9CB1B00A72906 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		35FDCFDD1DEAD67B00AA8FBC /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		35FDCFDE1DEAD67B00AA8FBC /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 		35B5D2821DD9BF9200A72906 /* DWLaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
+				35FDCFDD1DEAD67B00AA8FBC /* UIView+Extension.h */,
+				35FDCFDE1DEAD67B00AA8FBC /* UIView+Extension.m */,
 				35B5D2831DD9BFE200A72906 /* DWLaunchScreen.h */,
 				35B5D2841DD9BFE200A72906 /* DWLaunchScreen.m */,
 			);
@@ -168,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35FDCFDF1DEAD67B00AA8FBC /* UIView+Extension.m in Sources */,
 				35B5D2731DD9BF5C00A72906 /* ViewController.m in Sources */,
 				35B5D2851DD9BFE200A72906 /* DWLaunchScreen.m in Sources */,
 				35B5D2701DD9BF5C00A72906 /* AppDelegate.m in Sources */,
@@ -324,6 +330,7 @@
 				35B5D2811DD9BF5C00A72906 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
