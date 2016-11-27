@@ -33,6 +33,7 @@
 
 @implementation DWLaunchScreen
 
+#pragma mark ---初始化
 - (instancetype)init
 {
     self = [super init];
@@ -46,6 +47,7 @@
     return self;
 }
 
+#pragma mark ---设置数据
 - (instancetype)dw_LaunchScreenContent:(id)content window:(UIWindow *)window withError:(void(^)(NSError *error))error {
     
     self.backgroundColor = [UIColor clearColor];
