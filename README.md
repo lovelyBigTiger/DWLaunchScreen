@@ -29,10 +29,11 @@
 ---
 #### 在AppDelegate.m中引入头文件
     #import "DWLaunchScreen.h"
+![使用准备](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/使用准备.png)
     
 #### 如果为Image对象并且需要点击则需要设置代理
     <DWLaunchScreenDelegate>
-
+![头文件](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/头文件.png)
     
 ---
 #### 在- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions方法中加入以下代码
