@@ -6,18 +6,22 @@
 # 微信:ai739814184
 # QQ群:577506623
 # e-mail:dwang.hello@outlook.com
-# 简书:
+# [简书:http://www.jianshu.com/p/6ca7e36b137d](http://www.jianshu.com/p/6ca7e36b137d)
 ---
-![默认](http://g.hiphotos.baidu.com/image/pic/item/e824b899a9014c08409ffa89037b02087bf4f472.jpg)
+# 默认
+![默认](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/默认.gif)
 
 ---
-![放大](http://d.hiphotos.baidu.com/image/w%3D310/sign=52e830366959252da3171b05049b032c/a2cc7cd98d1001e9b210c623b10e7bec54e797ea.jpg)
+# 放大
+![放大](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/放大.gif)
 
 ---
-![缩小](http://b.hiphotos.baidu.com/image/w%3D310/sign=b80cdf1d283fb80e0cd167d606d02ffb/d009b3de9c82d158755a8a9d890a19d8bd3e42c6.jpg)
+# 缩小
+![缩小](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/缩小.gif)
 
 ---
-![横切](http://f.hiphotos.baidu.com/image/w%3D310/sign=625d14c2bd8f8c54e3d3c32e0a292dee/a686c9177f3e6709043197d332c79f3df8dc55ed.jpg)
+# 横切
+![横切](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/横切.gif)
 
 ---
 #### 将Demo中的DWLaunchScreen文件夹拖入到您的工程中
@@ -31,7 +35,7 @@
 
     
 ---
-####在- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions方法中加入以下代码
+#### 在- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions方法中加入以下代码
 self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     self.window.rootViewController = [[ViewController alloc] init];
