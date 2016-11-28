@@ -25,11 +25,18 @@
 
 ---
 #### 将Demo中的DWLaunchScreen文件夹拖入到您的工程中
+![使用准备](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/使用准备.png)
+
+
+---
+#### 在info.plist中加入两个key,全部为BOOL类型
+    
+    View controller-based status bar appearance  值为NO   Status bar is initially hidden  值为YES
+![头文件](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/infoPlist.png)
 
 ---
 #### 在AppDelegate.m中引入头文件
     #import "DWLaunchScreen.h"
-![使用准备](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/使用准备.png)
     
 #### 如果为Image对象并且需要点击则需要设置代理
     <DWLaunchScreenDelegate>
@@ -37,7 +44,8 @@
     
 ---
 #### 在- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions方法中加入以下代码
-self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     self.window.rootViewController = [[ViewController alloc] init];
     
