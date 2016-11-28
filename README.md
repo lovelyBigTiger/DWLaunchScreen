@@ -6,17 +6,21 @@
 # 微信:ai739814184
 # QQ群:577506623
 # e-mail:dwang.hello@outlook.com
-# 简书:
+# [简书:http://www.jianshu.com/p/6ca7e36b137d](http://www.jianshu.com/p/6ca7e36b137d)
 ---
+# 默认
 ![默认](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/默认.gif)
 
 ---
+# 放大
 ![放大](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/放大.gif)
 
 ---
+# 缩小
 ![缩小](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/缩小.gif)
 
 ---
+# 横切
 ![横切](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/横切.gif)
 
 ---
