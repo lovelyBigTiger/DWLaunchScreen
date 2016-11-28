@@ -20,9 +20,6 @@
 /** 计时器 */
 @property (weak, nonatomic) NSTimer *timer;
 
-/** window */
-@property (weak, nonatomic) UIWindow *window;
-
 /** string */
 @property (copy, nonatomic) NSString *string;
 
@@ -51,17 +48,14 @@
 - (instancetype)dw_LaunchScreenContent:(id)content window:(UIWindow *)window withError:(void(^)(NSError *error))error {
     
     self.backgroundColor = [UIColor clearColor];
-    if (self.bgColor) {
-        self.backgroundColor = self.bgColor;
-    }
     
     self.frame = window.frame;
-    
-    self.window = window;
     
     UIButton *skip = [[UIButton alloc] init];
     
     self.skip = skip;
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(setSkipTitle) userInfo:nil repeats:YES];
     
     if ([content isKindOfClass:[UIImage class]]) {
         
@@ -94,6 +88,8 @@
             
             
         }
+        
+        [self.timer setFireDate:[NSDate distantFuture]];
         
         UIWebView *webView = [[UIWebView alloc] initWithFrame:self.frame];
         
@@ -138,6 +134,8 @@
         
         if ([urlString hasPrefix:@"http"]) {
             
+            [self.timer setFireDate:[NSDate distantFuture]];
+            
             UIWebView *webView = [[UIWebView alloc] initWithFrame:self.frame];
             
             webView.scalesPageToFit = YES;
@@ -166,6 +164,7 @@
             
         }else {
             
+            [[UIApplication sharedApplication] setStatusBarHidden:NO];
             [self removeFromSuperview];
             
             return self;
@@ -240,8 +239,6 @@
         
     }
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(setSkipTitle) userInfo:nil repeats:YES];
-    
     NSTimeInterval accordingLength = 3.0f;
     if (self.accordingLength > 0) {
         accordingLength = self.accordingLength;
@@ -282,12 +279,75 @@
     
     self.skip.hidden = YES;
 
-    NSTimeInterval deleteLength = 0.58f;
+    NSTimeInterval deleteLength = 0.5f;
     if (self.deleteLength) {
         deleteLength = self.deleteLength;
     }
     
     [UIView animateWithDuration:deleteLength animations:^{
+        
+        switch (self.disappearType) {
+            case 1:{
+                double proportion = 2.25f;
+                if (self.proportion) {
+                    proportion = self.proportion;
+                }
+                self.imageView.transform = CGAffineTransformScale(self.imageView.transform, proportion, proportion);
+                self.webView.transform = CGAffineTransformScale(self.webView.transform, proportion, proportion);
+            }break;
+            case 2:{
+                double proportion = 0.1f;
+                if (self.proportion) {
+                    proportion = self.proportion;
+                }
+                self.imageView.transform = CGAffineTransformScale(self.imageView.transform, proportion, proportion);
+                self.webView.transform = CGAffineTransformScale(self.webView.transform, proportion, proportion);
+            }break;
+            case 3:{
+                
+                /** WebView */
+                UIImageView *webTopImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height*0.5)];
+                
+                webTopImageView.image = [self snipGesturesPasswordsView:self.webView rect:CGRectMake(0, 0, self.webView.width, self.webView.height * 0.5)];
+                
+                UIImageView *webBottonImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.height*0.5, self.width, self.height*0.5)];;
+                
+                webBottonImageView.image = [self snipGesturesPasswordsView:self.webView rect:CGRectMake(0, self.height*0.5, self.webView.width, self.height*0.5)];
+                
+                [self addSubview:webTopImageView];
+                
+                [self addSubview:webBottonImageView];
+                
+                webTopImageView.y = -self.webView.height * 0.5;
+                
+                webBottonImageView.y = self.webView.height;
+                
+                /** ImageView */
+                UIImageView *imgTopImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height*0.5)];
+                
+                imgTopImageView.image = [self snipGesturesPasswordsView:self.imageView rect:CGRectMake(0, 0, self.imageView.width, self.imageView.height * 0.5)];
+                
+                UIImageView *imgBottonImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.height*0.5, self.width, self.height * 0.5)];;
+                
+                imgBottonImageView.image = [self snipGesturesPasswordsView:self.imageView rect:CGRectMake(0, self.height*0.5, self.imageView.width, self.imageView.height * 0.5)];
+                
+                [self addSubview:imgTopImageView];
+                
+                [self addSubview:imgBottonImageView];
+                
+                imgTopImageView.y = -self.imageView.height * 0.5;
+                
+                imgBottonImageView.y = self.imageView.height;
+                
+                [self.imageView removeFromSuperview];
+                
+                [self.webView removeFromSuperview];
+                
+            }
+                break;
+            default:
+                break;
+        }
         
         self.skip.alpha = 0.0;
         
@@ -301,12 +361,15 @@
         
         [self.webView removeFromSuperview];
         
+        [[UIApplication sharedApplication] setStatusBarHidden:NO];
+        
         [self removeFromSuperview];
         
     }];
     
 }
 
+#pragma mark ---图片点击
 - (void)imageClick {
     
     if ([self.delegate respondsToSelector:@selector(dw_didSelectImageView)]) {
@@ -317,12 +380,14 @@
     
 }
 
+#pragma mark ---webViewDelegate
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    
     [self removeFromSuperview];
     
 }
-
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     
     [self.imageView removeFromSuperview];
@@ -342,7 +407,6 @@
     }
     
 }
-
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
     if ([request.URL.absoluteString hasPrefix:self.string]) {
@@ -351,6 +415,8 @@
         
         if (self.count == 3) {
             
+            [[UIApplication sharedApplication] setStatusBarHidden:NO];
+            
             [self removeFromSuperview];
             
         }
@@ -358,6 +424,40 @@
     
     return YES;
     
+}
+
+#pragma mark ---
+- (UIImage *)snipGesturesPasswordsView:(UIView *)view rect:(CGRect)rect {
+    
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]){
+        
+        UIGraphicsBeginImageContextWithOptions(view.size, NO, [UIScreen mainScreen].scale);
+        
+    } else {
+        
+        UIGraphicsBeginImageContext(view.bounds.size);
+        
+    }
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    return [self imageFromImage:image inRect:rect];
+    
+}
+
+- (UIImage *)imageFromImage:(UIImage *)image inRect:(CGRect)rect{
+    
+    //把像 素rect 转化为 点rect（如无转化则按原图像素取部分图片）
+    CGFloat scale = [UIScreen mainScreen].scale;
+    CGFloat x= rect.origin.x*scale,y=rect.origin.y*scale,w=rect.size.width*scale,h=rect.size.height*scale;
+    CGRect dianRect = CGRectMake(x, y, w, h);
+    
+    //截取部分图片并生成新图片
+    CGImageRef sourceImageRef = [image CGImage];
+    CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, dianRect);
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+    return newImage;
 }
 
 @end

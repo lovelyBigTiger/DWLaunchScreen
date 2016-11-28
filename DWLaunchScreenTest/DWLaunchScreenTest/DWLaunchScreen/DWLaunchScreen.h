@@ -10,11 +10,27 @@
 
 //skip显示位置
 typedef enum : NSUInteger {
-    TopRight,
-    TopLeft,
-    BottonLeft,
-    BottonRight
+    /** 右上 */
+    RightTop,
+    /** 左上 */
+    LeftTop,
+    /** 左下 */
+    LeftBotton,
+    /** 右下 */
+    RightBotton
 } SkipLocation;
+
+/** 消失动画方式 */
+typedef enum : NSUInteger {
+    /** 渐变 */
+    DWGradient,
+    /** 放大 */
+    DWAmplification,
+    /** 缩小 */
+    DWNarrow,
+    /** 横切 */
+    DWCrosscutting,
+} DisappearType;
 
 @protocol DWLaunchScreenDelegate <NSObject>
 
@@ -59,17 +75,19 @@ typedef enum : NSUInteger {
 @property (strong, nonatomic)   UIImage           *logoImage;
 
 
-/***********************************视图背景**********************************/
-/** 背景颜色/默认无背景色 */
-@property (strong, nonatomic)   UIColor           *bgColor;
-
-
 /***********************************设置数据**********************************/
-/** 显示时长/默认1.25f */
+/** 显示时长/默认3.0f */
 @property (assign, nonatomic)   NSInteger          accordingLength;
 
-/** 消失动画时长/默认1.25 */
+/** 消失动画时长/默认0.5f */
 @property (assign, nonatomic)   NSTimeInterval     deleteLength;
+
+/** 消失动画方式/默认渐变消失 */
+@property(assign, nonatomic)    DisappearType      disappearType;
+
+/** 放大(默认3.0)/缩小(默认0.1)比例 */
+@property(assign, nonatomic)    double             proportion;
+
 
 /***********************************delegate**********************************/
 /** 点击图片 */

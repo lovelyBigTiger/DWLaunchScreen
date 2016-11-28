@@ -27,57 +27,76 @@
     
     [self.window makeKeyAndVisible];
     
-    [NSThread sleepForTimeInterval:1.25f];
+    //    [NSThread sleepForTimeInterval:1.25f];
     
     DWLaunchScreen *launch = [[DWLaunchScreen alloc] init];
     
+    //设置代理，只有图片格式需要点击时才需设置
     launch.delegate = self;
     
-    launch.accordingLength = 5;
+    //设置显示时长
+    launch.accordingLength = 3.0;
     
-//    launch.bgColor = [UIColor whiteColor];
+    //设置消失耗时
+    launch.deleteLength = 3.0f;
     
-//    launch.deleteLength = 3.0f;
+    //消失方式
+    launch.disappearType = DWCrosscutting;
     
-//    launch.skipHide = YES;
+    //是否隐藏按钮
+    //    launch.skipHide = YES;
     
+    //按钮显示文字
     launch.skipString = @"等待:";
     
+    //字体颜色
     launch.skipTitleColor = [UIColor blackColor];
     
+    //字体大小
+    launch.skipFont = 18;
+    
+    //按钮背景颜色
     launch.skipBgColor = [UIColor orangeColor];
     
-//    launch.skipLocation = top;
+    //按钮显示位置
+    launch.skipLocation = LeftTop;
     
-//    launch.skipFont = 18;
-    
+    //网络时的渲染图，建议与启动图相同
     launch.logoImage = [UIImage imageNamed:@"bg.jpg"];
     
-//    [launch dw_LaunchScreenContent:@"https://www.baidu.com" window:self.window withError:^(NSError *error) {
-//        
-//         NSLog(@"error:%@", error);
-//        
-//    }];
+//    NSString格式
+//        [launch dw_LaunchScreenContent:@"https://www.baidu.com" window:self.window withError:^(NSError *error) {
+//    
+//             NSLog(@"error:%@", error);
+//    
+//        }];
     
-//    [launch dw_LaunchScreenContent:[UIImage imageNamed:@"bg.jpg"] window:self.window withError:^(NSError *error) {
-//        
-//        NSLog(@"error:%@", error);
-//        
-//    }];
-
+    
+//    UIImage格式
+//        [launch dw_LaunchScreenContent:[UIImage imageNamed:@"cat.jpeg"] window:self.window withError:^(NSError *error) {
+//    
+//            NSLog(@"error:%@", error);
+//    
+//        }];
+//    
+    
+//    NSURL格式
     [launch dw_LaunchScreenContent:[NSURL URLWithString:@"https://www.baidu.com"] window:self.window withError:^(NSError *error) {
         
         NSLog(@"error:%@", error);
-        
+    
     }];
     
     return YES;
 }
 
+#pragma mark ---点击了图片，只有图片格式时才生效
 - (void)dw_didSelectImageView {
     
     NSLog(@"点击了图片");
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"点击了图片" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

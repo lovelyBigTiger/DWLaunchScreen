@@ -16,6 +16,7 @@
 		35B5D2871DD9C9DF00A72906 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D2861DD9C9DF00A72906 /* bg.jpg */; };
 		35B5D2891DD9CB1B00A72906 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D2881DD9CB1B00A72906 /* Launch Screen.storyboard */; };
 		35FDCFDF1DEAD67B00AA8FBC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FDCFDE1DEAD67B00AA8FBC /* UIView+Extension.m */; };
+		8F5DA0D71DEBC50900F51A80 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F5DA0D61DEBC50900F51A80 /* cat.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		35B5D2881DD9CB1B00A72906 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		35FDCFDD1DEAD67B00AA8FBC /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		35FDCFDE1DEAD67B00AA8FBC /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		8F5DA0D61DEBC50900F51A80 /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				35B5D26F1DD9BF5C00A72906 /* AppDelegate.m */,
 				35B5D2711DD9BF5C00A72906 /* ViewController.h */,
 				35B5D2721DD9BF5C00A72906 /* ViewController.m */,
+				8F5DA0D61DEBC50900F51A80 /* cat.jpeg */,
 				35B5D2861DD9C9DF00A72906 /* bg.jpg */,
 				35B5D2741DD9BF5C00A72906 /* Main.storyboard */,
 				35B5D2771DD9BF5C00A72906 /* Assets.xcassets */,
@@ -159,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F5DA0D71DEBC50900F51A80 /* cat.jpeg in Resources */,
 				35B5D2781DD9BF5C00A72906 /* Assets.xcassets in Resources */,
 				35B5D2871DD9C9DF00A72906 /* bg.jpg in Resources */,
 				35B5D2891DD9CB1B00A72906 /* Launch Screen.storyboard in Resources */,

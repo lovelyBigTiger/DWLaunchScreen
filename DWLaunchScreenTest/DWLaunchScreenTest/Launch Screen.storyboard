@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2016年 dwang. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
-                                <rect key="frame" x="20" y="626.5" width="335" height="20.5"/>
+                                <rect key="frame" x="20" y="626" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -62,23 +62,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lB6-OY-M6w">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uGy-sV-6Ex">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="W3Y-pG-vhv" firstAttribute="top" secondItem="lB6-OY-M6w" secondAttribute="bottom" id="TJ9-kK-2ND"/>
-                            <constraint firstAttribute="trailing" secondItem="lB6-OY-M6w" secondAttribute="trailing" id="VdL-Ke-HRa"/>
-                            <constraint firstItem="lB6-OY-M6w" firstAttribute="leading" secondItem="JSm-k8-oL5" secondAttribute="leading" id="Z28-tu-8m2"/>
-                            <constraint firstItem="lB6-OY-M6w" firstAttribute="top" secondItem="FVE-9g-fYm" secondAttribute="bottom" constant="-20" id="htE-it-UMc"/>
+                            <constraint firstItem="uGy-sV-6Ex" firstAttribute="leading" secondItem="JSm-k8-oL5" secondAttribute="leading" id="ZGJ-Xf-az1"/>
+                            <constraint firstItem="W3Y-pG-vhv" firstAttribute="top" secondItem="uGy-sV-6Ex" secondAttribute="bottom" id="gdt-1p-lpB"/>
+                            <constraint firstItem="uGy-sV-6Ex" firstAttribute="top" secondItem="FVE-9g-fYm" secondAttribute="bottom" id="iUi-jc-kjM"/>
+                            <constraint firstAttribute="trailing" secondItem="uGy-sV-6Ex" secondAttribute="trailing" id="sd0-PN-Q8d"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tC3-Kw-7oF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="179"/>
+            <point key="canvasLocation" x="710" y="206"/>
         </scene>
     </scenes>
     <resources>
