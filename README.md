@@ -24,6 +24,15 @@
 ![横切](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/横切.gif)
 
 ---
+
+# 本地图片
+![本地图片](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/本地图片.gif)
+---
+
+# GIF
+![GIF](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/GIF.gif)
+
+---
 #### 将Demo中的DWLaunchScreen文件夹拖入到您的工程中
 ![使用准备](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/使用准备.png)
 
