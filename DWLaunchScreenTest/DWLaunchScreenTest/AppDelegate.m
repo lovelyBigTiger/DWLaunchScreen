@@ -85,19 +85,19 @@
 //        }];
 //
 //     GIF格式
-    [launch dw_LaunchScreenContent:@"fengjing.gif" window:self.window withError:^(NSError *error) {
-        
-        
-        NSLog(@"%@", error);
-        
-    }];
+//    [launch dw_LaunchScreenContent:@"fengjing.gif" window:self.window withError:^(NSError *error) {
+//        
+//        
+//        NSLog(@"%@", error);
+//        
+//    }];
     
 //    NSURL格式
-//    [launch dw_LaunchScreenContent:[NSURL URLWithString:@"https://www.baidu.com"] window:self.window withError:^(NSError *error) {
-//        
-//        NSLog(@"error:%@", error);
-//    
-//    }];
+    [launch dw_LaunchScreenContent:[NSURL URLWithString:@"https://www.baidu.com"] window:self.window withError:^(NSError *error) {
+        
+        NSLog(@"error:%@", error);
+    
+    }];
     
     return YES;
 }

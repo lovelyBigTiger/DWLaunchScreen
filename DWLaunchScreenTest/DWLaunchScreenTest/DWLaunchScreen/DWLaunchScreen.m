@@ -101,6 +101,8 @@
         
         UIWebView *webView = [[UIWebView alloc] initWithFrame:self.frame];
         
+        [webView.request setValue:@"2" forKey:@"_timeoutInterval"];
+        
         webView.delegate = self;
         
         self.webView = webView;
@@ -292,8 +294,6 @@
     
     NSInteger count = self.accordingLength --;
     
-    NSLog(@"%ld", count);
-    
     if (count == 0) {
         
         [self performSelector:@selector(skipSelf) withObject:self afterDelay:0.5];
@@ -443,24 +443,19 @@
     
     [self.imageView removeFromSuperview];
     
-    if ([webView.request.URL.absoluteString hasPrefix:self.string]) {
+    if ([webView.request.URL.absoluteString isEqualToString:[NSString stringWithFormat:@"%@/", self.string]]) {
         
         [self.timer setFireDate:[NSDate distantPast]];
         
         self.skip.hidden = NO;
         
-    }else {
-        
-        [self.timer setFireDate:[NSDate distantFuture]];
-        
-        self.skip.hidden = YES;
-        
     }
     
 }
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+
     
-    if ([request.URL.absoluteString hasPrefix:self.string]) {
+    if ([request.URL.absoluteString isEqualToString:[NSString stringWithFormat:@"%@/", self.string]]) {
         
         self.count ++;
         
@@ -471,6 +466,12 @@
             [self removeFromSuperview];
             
         }
+    }else {
+        
+        [self.timer setFireDate:[NSDate distantFuture]];
+        
+        self.skip.hidden = YES;
+        
     }
     
     return YES;
