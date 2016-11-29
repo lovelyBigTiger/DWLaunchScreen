@@ -10,13 +10,15 @@
 		35B5D26D1DD9BF5C00A72906 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B5D26C1DD9BF5C00A72906 /* main.m */; };
 		35B5D2701DD9BF5C00A72906 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B5D26F1DD9BF5C00A72906 /* AppDelegate.m */; };
 		35B5D2731DD9BF5C00A72906 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B5D2721DD9BF5C00A72906 /* ViewController.m */; };
-		35B5D2761DD9BF5C00A72906 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D2741DD9BF5C00A72906 /* Main.storyboard */; };
 		35B5D2781DD9BF5C00A72906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D2771DD9BF5C00A72906 /* Assets.xcassets */; };
 		35B5D2851DD9BFE200A72906 /* DWLaunchScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B5D2841DD9BFE200A72906 /* DWLaunchScreen.m */; };
 		35B5D2871DD9C9DF00A72906 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D2861DD9C9DF00A72906 /* bg.jpg */; };
 		35B5D2891DD9CB1B00A72906 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D2881DD9CB1B00A72906 /* Launch Screen.storyboard */; };
 		35FDCFDF1DEAD67B00AA8FBC /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FDCFDE1DEAD67B00AA8FBC /* UIView+Extension.m */; };
 		8F5DA0D71DEBC50900F51A80 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F5DA0D61DEBC50900F51A80 /* cat.jpeg */; };
+		8F7BC60F1DED09C8002F6C84 /* UIImageView+GIFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7BC60E1DED09C8002F6C84 /* UIImageView+GIFExtension.m */; };
+		8F7BC6111DED0CEE002F6C84 /* fengjing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BC6101DED0CEE002F6C84 /* fengjing.gif */; };
+		8F7BC6131DED116D002F6C84 /* main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BC6121DED116D002F6C84 /* main.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +28,6 @@
 		35B5D26F1DD9BF5C00A72906 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		35B5D2711DD9BF5C00A72906 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		35B5D2721DD9BF5C00A72906 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		35B5D2751DD9BF5C00A72906 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35B5D2771DD9BF5C00A72906 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35B5D27C1DD9BF5C00A72906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35B5D2831DD9BFE200A72906 /* DWLaunchScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWLaunchScreen.h; sourceTree = "<group>"; };
@@ -36,6 +37,10 @@
 		35FDCFDD1DEAD67B00AA8FBC /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		35FDCFDE1DEAD67B00AA8FBC /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		8F5DA0D61DEBC50900F51A80 /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
+		8F7BC60D1DED09C8002F6C84 /* UIImageView+GIFExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+GIFExtension.h"; sourceTree = "<group>"; };
+		8F7BC60E1DED09C8002F6C84 /* UIImageView+GIFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+GIFExtension.m"; sourceTree = "<group>"; };
+		8F7BC6101DED0CEE002F6C84 /* fengjing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fengjing.gif; sourceTree = "<group>"; };
+		8F7BC6121DED116D002F6C84 /* main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +78,10 @@
 				35B5D26F1DD9BF5C00A72906 /* AppDelegate.m */,
 				35B5D2711DD9BF5C00A72906 /* ViewController.h */,
 				35B5D2721DD9BF5C00A72906 /* ViewController.m */,
+				8F7BC6121DED116D002F6C84 /* main.jpg */,
+				8F7BC6101DED0CEE002F6C84 /* fengjing.gif */,
 				8F5DA0D61DEBC50900F51A80 /* cat.jpeg */,
 				35B5D2861DD9C9DF00A72906 /* bg.jpg */,
-				35B5D2741DD9BF5C00A72906 /* Main.storyboard */,
 				35B5D2771DD9BF5C00A72906 /* Assets.xcassets */,
 				35B5D2881DD9CB1B00A72906 /* Launch Screen.storyboard */,
 				35B5D27C1DD9BF5C00A72906 /* Info.plist */,
@@ -95,6 +101,8 @@
 		35B5D2821DD9BF9200A72906 /* DWLaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
+				8F7BC60D1DED09C8002F6C84 /* UIImageView+GIFExtension.h */,
+				8F7BC60E1DED09C8002F6C84 /* UIImageView+GIFExtension.m */,
 				35FDCFDD1DEAD67B00AA8FBC /* UIView+Extension.h */,
 				35FDCFDE1DEAD67B00AA8FBC /* UIView+Extension.m */,
 				35B5D2831DD9BFE200A72906 /* DWLaunchScreen.h */,
@@ -163,10 +171,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F5DA0D71DEBC50900F51A80 /* cat.jpeg in Resources */,
+				8F7BC6131DED116D002F6C84 /* main.jpg in Resources */,
 				35B5D2781DD9BF5C00A72906 /* Assets.xcassets in Resources */,
 				35B5D2871DD9C9DF00A72906 /* bg.jpg in Resources */,
 				35B5D2891DD9CB1B00A72906 /* Launch Screen.storyboard in Resources */,
-				35B5D2761DD9BF5C00A72906 /* Main.storyboard in Resources */,
+				8F7BC6111DED0CEE002F6C84 /* fengjing.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35FDCFDF1DEAD67B00AA8FBC /* UIView+Extension.m in Sources */,
+				8F7BC60F1DED09C8002F6C84 /* UIImageView+GIFExtension.m in Sources */,
 				35B5D2731DD9BF5C00A72906 /* ViewController.m in Sources */,
 				35B5D2851DD9BFE200A72906 /* DWLaunchScreen.m in Sources */,
 				35B5D2701DD9BF5C00A72906 /* AppDelegate.m in Sources */,
@@ -186,17 +196,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		35B5D2741DD9BF5C00A72906 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				35B5D2751DD9BF5C00A72906 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		35B5D27D1DD9BF5C00A72906 /* Debug */ = {

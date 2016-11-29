@@ -116,7 +116,7 @@
     return YES;
 
 ---
-# #pragma mark ---点击了图片，只有图片格式时才生效
+# #pragma mark ---点击了图片，只有图片与GIF格式时才生效
      - (void)dw_didSelectImageView {
     
     NSLog(@"点击了图片");

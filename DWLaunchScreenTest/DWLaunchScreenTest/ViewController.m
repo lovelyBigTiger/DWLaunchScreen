@@ -22,7 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    
+    imageView.image = [UIImage imageNamed:@"main.jpg"];
+    
+    [self.view addSubview:imageView];
     
 }
 

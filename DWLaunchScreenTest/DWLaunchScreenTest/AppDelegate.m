@@ -46,7 +46,7 @@
     launch.deleteLength = 3.0f;
     
     //消失方式
-    launch.disappearType = DWCrosscutting;
+    launch.disappearType = DWAmplification;
     
     //是否隐藏按钮
     //    launch.skipHide = YES;
@@ -83,14 +83,21 @@
 //            NSLog(@"error:%@", error);
 //    
 //        }];
-//    
+//
+//     GIF格式
+    [launch dw_LaunchScreenContent:@"fengjing.gif" window:self.window withError:^(NSError *error) {
+        
+        
+        NSLog(@"%@", error);
+        
+    }];
     
 //    NSURL格式
-    [launch dw_LaunchScreenContent:[NSURL URLWithString:@"https://www.baidu.com"] window:self.window withError:^(NSError *error) {
-        
-        NSLog(@"error:%@", error);
-    
-    }];
+//    [launch dw_LaunchScreenContent:[NSURL URLWithString:@"https://www.baidu.com"] window:self.window withError:^(NSError *error) {
+//        
+//        NSLog(@"error:%@", error);
+//    
+//    }];
     
     return YES;
 }
@@ -102,6 +109,10 @@
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"点击了图片" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
+}
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

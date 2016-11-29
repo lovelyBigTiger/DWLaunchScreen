@@ -13,6 +13,7 @@
 
 #import "DWLaunchScreen.h"
 #import "UIView+Extension.h"
+#import "UIImageView+GIFExtension.h"
 
 @interface DWLaunchScreen ()<UIWebViewDelegate>
 
@@ -60,7 +61,9 @@
     
     self.skip = skip;
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(setSkipTitle) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.05f target:self selector:@selector(setSkipTitle) userInfo:nil repeats:YES];
+    
+    [self.timer setFireDate:[NSDate distantFuture]];
     
     if ([content isKindOfClass:[UIImage class]]) {
         
@@ -78,6 +81,8 @@
         
         [self addSubview:imageView];
         
+        [self.timer setFireDate:[NSDate distantPast]];
+        
     }
     
     if ([content isKindOfClass:[NSURL class]]) {
@@ -93,8 +98,6 @@
             
             
         }
-        
-        [self.timer setFireDate:[NSDate distantFuture]];
         
         UIWebView *webView = [[UIWebView alloc] initWithFrame:self.frame];
         
@@ -135,11 +138,9 @@
             
         }
         
-        NSString *urlString = content;
+        NSString *string = content;
         
-        if ([urlString hasPrefix:@"http"]) {
-            
-            [self.timer setFireDate:[NSDate distantFuture]];
+        if ([string hasPrefix:@"http"]) {
             
             UIWebView *webView = [[UIWebView alloc] initWithFrame:self.frame];
             
@@ -149,11 +150,11 @@
             
             webView.delegate = self;
             
-            self.string = urlString;
+            self.string = string;
             
             self.webView = webView;
             
-            [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]]];
+            [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:string]]];
             
             [self addSubview:webView];
             
@@ -167,9 +168,41 @@
             
             [self addSubview:imageView];
             
-        }else {
+        } else if ([string hasSuffix:@".gif"]) {
+            
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.frame];
+            
+            self.imageView = imageView;
+            
+            imageView.userInteractionEnabled = YES;
+            
+            [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageClick)]];
+            
+            self.skip.hidden = NO;
+            
+            NSURL *imageURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:string ofType:nil]];
+            
+            [imageView dw_SetImage:imageURL];
+            
+            [imageView stopAnimating];
+            
+            imageView.image = [self snipGesturesPasswordsView:imageView rect:imageView.frame];
+            
+            [self addSubview:imageView];
+            
+            [self.timer setFireDate:[NSDate distantPast]];
+            
+            if (self.disappearType == DWCrosscutting) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+                error(@"GIF格式下暂时无法使用横切消失--->disappearType");
+#pragma clang diagnostic pop
+            }
+            
+        } else {
             
             [[UIApplication sharedApplication] setStatusBarHidden:NO];
+            
             [self removeFromSuperview];
             
             return self;
@@ -259,7 +292,9 @@
     
     NSInteger count = self.accordingLength --;
     
-    if (count < 0) {
+    NSLog(@"%ld", count);
+    
+    if (count == 0) {
         
         [self performSelector:@selector(skipSelf) withObject:self afterDelay:0.5];
         
@@ -292,6 +327,7 @@
     [UIView animateWithDuration:deleteLength animations:^{
         
         switch (self.disappearType) {
+                
             case 1:{
                 double proportion = 2.25f;
                 if (self.proportion) {
@@ -300,6 +336,7 @@
                 self.imageView.transform = CGAffineTransformScale(self.imageView.transform, proportion, proportion);
                 self.webView.transform = CGAffineTransformScale(self.webView.transform, proportion, proportion);
             }break;
+                
             case 2:{
                 double proportion = 0.1f;
                 if (self.proportion) {
@@ -308,6 +345,7 @@
                 self.imageView.transform = CGAffineTransformScale(self.imageView.transform, proportion, proportion);
                 self.webView.transform = CGAffineTransformScale(self.webView.transform, proportion, proportion);
             }break;
+                
             case 3:{
                 
                 /** WebView */
@@ -336,6 +374,10 @@
                 
                 imgBottonImageView.image = [self snipGesturesPasswordsView:self.imageView rect:CGRectMake(0, self.height*0.5, self.imageView.width, self.imageView.height * 0.5)];
                 
+                [self.imageView removeFromSuperview];
+                
+                [self.webView removeFromSuperview];
+                
                 [self addSubview:imgTopImageView];
                 
                 [self addSubview:imgBottonImageView];
@@ -343,10 +385,6 @@
                 imgTopImageView.y = -self.imageView.height * 0.5;
                 
                 imgBottonImageView.y = self.imageView.height;
-                
-                [self.imageView removeFromSuperview];
-                
-                [self.webView removeFromSuperview];
                 
             }
                 break;
@@ -394,6 +432,14 @@
     
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"WebKitCacheModelPreferenceKey"];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"WebKitDiskImageCacheEnabled"];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"WebKitOfflineWebApplicationCacheEnabled"];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self.imageView removeFromSuperview];
     
@@ -463,6 +509,12 @@
     CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, dianRect);
     UIImage *newImage = [UIImage imageWithCGImage:newImageRef scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
     return newImage;
+}
+
+- (void)dealloc {
+    
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    
 }
 
 @end
