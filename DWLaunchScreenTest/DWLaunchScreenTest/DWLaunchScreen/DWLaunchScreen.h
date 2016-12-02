@@ -13,6 +13,9 @@
 
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIView+Extension.h"
+#import "UIImageView+GIFExtension.h"
 
 //skip显示位置
 typedef enum : NSUInteger {
@@ -53,6 +56,9 @@ typedef enum : NSUInteger {
 
 /** 是否显示skip/默认显示 */
 @property (assign, nonatomic)   BOOL               skipHide;
+
+/** 是否显示倒计时时间/默认显示 */
+@property(assign, nonatomic)    BOOL               skipTimerHide;
 
 /** skip背景颜色 */
 @property (strong, nonatomic)   UIColor           *skipBgColor;

@@ -45,6 +45,8 @@
     //设置消失耗时
     launch.deleteLength = 3.0f;
     
+    launch.skipTimerHide = YES;
+    
     //消失方式
     launch.disappearType = DWAmplification;
     
@@ -52,7 +54,7 @@
     //    launch.skipHide = YES;
     
     //按钮显示文字
-    launch.skipString = @"等待:";
+//    launch.skipString = @"等待:";
     
     //字体颜色
     launch.skipTitleColor = [UIColor blackColor];

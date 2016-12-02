@@ -12,8 +12,6 @@
 
 
 #import "DWLaunchScreen.h"
-#import "UIView+Extension.h"
-#import "UIImageView+GIFExtension.h"
 
 @interface DWLaunchScreen ()<UIWebViewDelegate>
 
@@ -217,27 +215,23 @@
     
     if (!self.skipHide) {
         
-        NSString *skipString = @"剩余:";
-        if (self.skipString) {
-            skipString = self.skipString;
+        if (!self.skipTimerHide) {
+            
+         [skip setTitle:[NSString stringWithFormat:@"   %@ %ld   ",self.skipString?self.skipString:@"剩余:" ,(long)self.accordingLength] forState:UIControlStateNormal];
+            
+        }else {
+            
+            [skip setTitle:[NSString stringWithFormat:@"  %@  ",self.skipString?self.skipString:@"跳过"] forState:UIControlStateNormal];
+            
         }
-        [skip setTitle:[NSString stringWithFormat:@"   %@ %ld   ",skipString ,(long)self.accordingLength] forState:UIControlStateNormal];
         
-        UIColor *skipTitleColor = [UIColor whiteColor];
-        if (self.skipTitleColor) {
-            skipTitleColor = self.skipTitleColor;
-        }
-        [skip setTitleColor:skipTitleColor forState:UIControlStateNormal];
+        [skip setTitleColor:self.skipTitleColor?self.skipTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
         [skip addTarget:self action:@selector(skipSelf) forControlEvents:UIControlEventTouchUpInside];
         
         [skip.titleLabel setFont:[UIFont systemFontOfSize:self.skipFont>0?self.skipFont:14]];
-        
-        UIColor *skipBgColor = [UIColor whiteColor];
-        if (self.skipBgColor) {
-            skipBgColor = self.skipBgColor;
-        }
-        skip.backgroundColor = skipBgColor;
+       
+        skip.backgroundColor = self.skipBgColor?self.skipBgColor:[UIColor whiteColor];
         
         [skip sizeToFit];
         
@@ -289,12 +283,13 @@
         
     }else {
         
-        NSString *skipString = @"剩余:";
-        if (self.skipString) {
-            skipString = self.skipString;
+        if (!self.skipTimerHide) {
+            
+            [self.skip setTitle:[NSString stringWithFormat:@"   %@ %ld   ",self.skipString?self.skipString:@"剩余:" ,count] forState:UIControlStateNormal];
+         
+            [self.skip sizeToFit];
+            
         }
-        [self.skip setTitle:[NSString stringWithFormat:@"   %@ %ld   ", skipString ,count] forState:UIControlStateNormal];
-        [self.skip sizeToFit];
     }
     
 }
