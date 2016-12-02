@@ -231,11 +231,7 @@
         
         [skip addTarget:self action:@selector(skipSelf) forControlEvents:UIControlEventTouchUpInside];
         
-        NSInteger font = 14;
-        if (self.skipFont > 0) {
-            font = self.skipFont;
-        }
-        [skip.titleLabel setFont:[UIFont systemFontOfSize:font]];
+        [skip.titleLabel setFont:[UIFont systemFontOfSize:self.skipFont>0?self.skipFont:14]];
         
         UIColor *skipBgColor = [UIColor whiteColor];
         if (self.skipBgColor) {
@@ -269,20 +265,13 @@
         [self addSubview:skip];
         
         if (self.skipBounds) {
-            NSInteger skipRadius = skip.width/6;
-            if (self.skipRadius > 0) {
-                skipRadius = self.skipRadius;
-            }
-            skip.layer.cornerRadius = skipRadius;
+            skip.layer.cornerRadius = self.skipRadius>0?self.skipRadius:self.skip.width/6;
             skip.clipsToBounds = YES;
         }
         
     }
     
-    NSTimeInterval accordingLength = 3.0f;
-    if (self.accordingLength > 0) {
-        accordingLength = self.accordingLength;
-    }
+    self.accordingLength = self.accordingLength>0?self.accordingLength:3.0f;
     
     return self;
 }
@@ -319,29 +308,18 @@
     
     self.skip.hidden = YES;
 
-    NSTimeInterval deleteLength = 0.5f;
-    if (self.deleteLength) {
-        deleteLength = self.deleteLength;
-    }
-    
-    [UIView animateWithDuration:deleteLength animations:^{
+    [UIView animateWithDuration:self.deleteLength?self.deleteLength:0.5 animations:^{
         
         switch (self.disappearType) {
                 
             case 1:{
-                double proportion = 2.25f;
-                if (self.proportion) {
-                    proportion = self.proportion;
-                }
+                double proportion = self.proportion?self.proportion:2.25f;
                 self.imageView.transform = CGAffineTransformScale(self.imageView.transform, proportion, proportion);
                 self.webView.transform = CGAffineTransformScale(self.webView.transform, proportion, proportion);
             }break;
                 
             case 2:{
-                double proportion = 0.1f;
-                if (self.proportion) {
-                    proportion = self.proportion;
-                }
+                double proportion = self.proportion?self.proportion:0.1f;
                 self.imageView.transform = CGAffineTransformScale(self.imageView.transform, proportion, proportion);
                 self.webView.transform = CGAffineTransformScale(self.webView.transform, proportion, proportion);
             }break;

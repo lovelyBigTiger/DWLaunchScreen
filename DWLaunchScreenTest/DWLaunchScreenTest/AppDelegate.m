@@ -26,7 +26,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    self.window.rootViewController = [[ViewController alloc] init];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
     
     self.window.backgroundColor = [UIColor whiteColor];
     
@@ -40,7 +40,7 @@
     launch.delegate = self;
     
     //设置显示时长
-    launch.accordingLength = 3.0;
+//    launch.accordingLength = 4.0;
     
     //设置消失耗时
     launch.deleteLength = 3.0f;
@@ -85,19 +85,19 @@
 //        }];
 //
 //     GIF格式
-//    [launch dw_LaunchScreenContent:@"fengjing.gif" window:self.window withError:^(NSError *error) {
-//        
-//        
-//        NSLog(@"%@", error);
-//        
-//    }];
+    [launch dw_LaunchScreenContent:@"fengjing.gif" window:self.window withError:^(NSError *error) {
+        
+        
+        NSLog(@"%@", error);
+        
+    }];
     
 //    NSURL格式
-    [launch dw_LaunchScreenContent:[NSURL URLWithString:@"https://www.baidu.com"] window:self.window withError:^(NSError *error) {
-        
-        NSLog(@"error:%@", error);
-    
-    }];
+//    [launch dw_LaunchScreenContent:[NSURL URLWithString:@"https://www.baidu.com"] window:self.window withError:^(NSError *error) {
+//        
+//        NSLog(@"error:%@", error);
+//    
+//    }];
     
     return YES;
 }
