@@ -1,5 +1,6 @@
 # 自定义启动页/广告页
 ---
+# ps:现已改成倒计时按钮为0时直接取消，不显示0
 # 如果感觉不错，请给个Star支持一下
 # 使用中如果遇到什么问题可以联系我
 # QQ:739814184 
@@ -22,6 +23,15 @@
 ---
 # 横切
 ![横切](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/横切.gif)
+
+---
+
+# 本地图片
+![本地图片](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/本地图片.gif)
+---
+
+# GIF
+![GIF](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/GIF.gif)
 
 ---
 #### 将Demo中的DWLaunchScreen文件夹拖入到您的工程中
