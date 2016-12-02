@@ -19,6 +19,9 @@
 		8F7BC60F1DED09C8002F6C84 /* UIImageView+GIFExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7BC60E1DED09C8002F6C84 /* UIImageView+GIFExtension.m */; };
 		8F7BC6111DED0CEE002F6C84 /* fengjing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BC6101DED0CEE002F6C84 /* fengjing.gif */; };
 		8F7BC6131DED116D002F6C84 /* main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BC6121DED116D002F6C84 /* main.jpg */; };
+		8F82287C1DF12354003E12AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F82287B1DF12354003E12AF /* UIKit.framework */; };
+		8F82287E1DF1235A003E12AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F82287D1DF1235A003E12AF /* Foundation.framework */; };
+		8F8228801DF12360003E12AF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F82287F1DF12360003E12AF /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		8F7BC60E1DED09C8002F6C84 /* UIImageView+GIFExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+GIFExtension.m"; sourceTree = "<group>"; };
 		8F7BC6101DED0CEE002F6C84 /* fengjing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fengjing.gif; sourceTree = "<group>"; };
 		8F7BC6121DED116D002F6C84 /* main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main.jpg; sourceTree = "<group>"; };
+		8F82287B1DF12354003E12AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8F82287D1DF1235A003E12AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8F82287F1DF12360003E12AF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F8228801DF12360003E12AF /* ImageIO.framework in Frameworks */,
+				8F82287E1DF1235A003E12AF /* Foundation.framework in Frameworks */,
+				8F82287C1DF12354003E12AF /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +68,7 @@
 			children = (
 				35B5D26A1DD9BF5C00A72906 /* DWLaunchScreenTest */,
 				35B5D2691DD9BF5C00A72906 /* Products */,
+				8F82287A1DF12354003E12AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +119,16 @@
 				35B5D2841DD9BFE200A72906 /* DWLaunchScreen.m */,
 			);
 			path = DWLaunchScreen;
+			sourceTree = "<group>";
+		};
+		8F82287A1DF12354003E12AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F82287F1DF12360003E12AF /* ImageIO.framework */,
+				8F82287D1DF1235A003E12AF /* Foundation.framework */,
+				8F82287B1DF12354003E12AF /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
