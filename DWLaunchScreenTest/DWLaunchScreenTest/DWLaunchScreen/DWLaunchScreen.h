@@ -14,8 +14,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "UIView+Extension.h"
-#import "UIImageView+GIFExtension.h"
+#import <ImageIO/ImageIO.h>
 
 //skip显示位置
 typedef enum : NSUInteger {
@@ -114,7 +113,5 @@ typedef enum : NSUInteger {
  @return 当前视图
  */
 - (instancetype)dw_LaunchScreenContent:(id)content window:(UIWindow *)window withError:(void(^)(NSError *error))error;
-
-
 
 @end
