@@ -11,9 +11,9 @@
 		35B5D2701DD9BF5C00A72906 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B5D26F1DD9BF5C00A72906 /* AppDelegate.m */; };
 		35B5D2731DD9BF5C00A72906 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B5D2721DD9BF5C00A72906 /* ViewController.m */; };
 		35B5D2781DD9BF5C00A72906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D2771DD9BF5C00A72906 /* Assets.xcassets */; };
-		35B5D2851DD9BFE200A72906 /* DWLaunchScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B5D2841DD9BFE200A72906 /* DWLaunchScreen.m */; };
 		35B5D2871DD9C9DF00A72906 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D2861DD9C9DF00A72906 /* bg.jpg */; };
 		35B5D2891DD9CB1B00A72906 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D2881DD9CB1B00A72906 /* Launch Screen.storyboard */; };
+		8F47A0061E5E6946003CC306 /* DWLaunchScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F47A0051E5E6946003CC306 /* DWLaunchScreen.m */; };
 		8F5DA0D71DEBC50900F51A80 /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F5DA0D61DEBC50900F51A80 /* cat.jpeg */; };
 		8F7BC6111DED0CEE002F6C84 /* fengjing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BC6101DED0CEE002F6C84 /* fengjing.gif */; };
 		8F7BC6131DED116D002F6C84 /* main.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F7BC6121DED116D002F6C84 /* main.jpg */; };
@@ -31,10 +31,10 @@
 		35B5D2721DD9BF5C00A72906 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		35B5D2771DD9BF5C00A72906 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35B5D27C1DD9BF5C00A72906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		35B5D2831DD9BFE200A72906 /* DWLaunchScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWLaunchScreen.h; sourceTree = "<group>"; };
-		35B5D2841DD9BFE200A72906 /* DWLaunchScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWLaunchScreen.m; sourceTree = "<group>"; };
 		35B5D2861DD9C9DF00A72906 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		35B5D2881DD9CB1B00A72906 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8F47A0041E5E6946003CC306 /* DWLaunchScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWLaunchScreen.h; sourceTree = "<group>"; };
+		8F47A0051E5E6946003CC306 /* DWLaunchScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWLaunchScreen.m; sourceTree = "<group>"; };
 		8F5DA0D61DEBC50900F51A80 /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
 		8F7BC6101DED0CEE002F6C84 /* fengjing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fengjing.gif; sourceTree = "<group>"; };
 		8F7BC6121DED116D002F6C84 /* main.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main.jpg; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		35B5D26A1DD9BF5C00A72906 /* DWLaunchScreenTest */ = {
 			isa = PBXGroup;
 			children = (
-				35B5D2821DD9BF9200A72906 /* DWLaunchScreen */,
+				8F47A0031E5E6946003CC306 /* DWLaunchScreen */,
 				35B5D26E1DD9BF5C00A72906 /* AppDelegate.h */,
 				35B5D26F1DD9BF5C00A72906 /* AppDelegate.m */,
 				35B5D2711DD9BF5C00A72906 /* ViewController.h */,
@@ -102,14 +102,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		35B5D2821DD9BF9200A72906 /* DWLaunchScreen */ = {
+		8F47A0031E5E6946003CC306 /* DWLaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				35B5D2831DD9BFE200A72906 /* DWLaunchScreen.h */,
-				35B5D2841DD9BFE200A72906 /* DWLaunchScreen.m */,
+				8F47A0041E5E6946003CC306 /* DWLaunchScreen.h */,
+				8F47A0051E5E6946003CC306 /* DWLaunchScreen.m */,
 			);
 			path = DWLaunchScreen;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		8F82287A1DF12354003E12AF /* Frameworks */ = {
 			isa = PBXGroup;
@@ -197,7 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35B5D2731DD9BF5C00A72906 /* ViewController.m in Sources */,
-				35B5D2851DD9BFE200A72906 /* DWLaunchScreen.m in Sources */,
+				8F47A0061E5E6946003CC306 /* DWLaunchScreen.m in Sources */,
 				35B5D2701DD9BF5C00A72906 /* AppDelegate.m in Sources */,
 				35B5D26D1DD9BF5C00A72906 /* main.m in Sources */,
 			);
