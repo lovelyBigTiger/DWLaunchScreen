@@ -10,6 +10,7 @@
 # e-mail:dwang.hello@outlook.com
 # [简书:http://www.jianshu.com/p/6ca7e36b137d](http://www.jianshu.com/p/6ca7e36b137d)
 ---
+# pod 'DWLaunchScreen'
 # 默认
 ![默认](https://github.com/dwanghello/DWLaunchScreenTest/blob/master/DWLaunchScreenTest/默认.gif)
 
