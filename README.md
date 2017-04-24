@@ -1,3 +1,4 @@
+[![CocoaPods](http://img.shields.io/cocoapods/v/DWLaunchScreen.svg?style=flat)](http://cocoapods.org/?q=DWLaunchScreen)
 # 自定义启动页/广告页
 ---
 # ps:现已改成倒计时按钮为0时直接取消，不显示0
